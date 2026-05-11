@@ -1,0 +1,203 @@
+x-airflow-common: &airflow-common
+  build: .
+  image: devops-lab4-airflow:2.7.1
+  environment: &airflow-common-env
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+    AIRFLOW__CORE__FERNET_KEY: ""
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "true"
+    AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    AIRFLOW__API__AUTH_BACKENDS: airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session
+    AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: "true"
+    PYTHONDONTWRITEBYTECODE: "1"
+    _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
+    _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
+  volumes:
+    - ./dags:/opt/airflow/dags
+    - ./logs:/opt/airflow/logs
+    - ./output:/opt/airflow/output
+    - ./spark:/opt/airflow/spark
+    - ./spark-logs:/opt/airflow/spark-logs
+  user: "${AIRFLOW_UID:-50000}:0"
+  depends_on: &airflow-common-depends-on
+    postgres:
+      condition: service_healthy
+    spark-worker:
+      condition: service_started
+
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 10s
+      retries: 5
+      start_period: 5s
+    restart: unless-stopped
+
+  spark-master:
+    container_name: lab4-spark-master
+    image: apache/spark:3.5.0
+    user: "0:0"
+    environment:
+      SPARK_MASTER_HOST: spark-master
+      SPARK_MASTER_PORT: 7077
+    ports:
+      - "4042:8080"
+      - "7079:7077"
+    volumes:
+      - ./spark-conf/metrics.properties:/opt/spark/conf/metrics.properties:ro
+      - ./spark-logs:/opt/spark/logs
+    command:
+      - /bin/bash
+      - -c
+      - |
+        set -o pipefail
+        /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master 2>&1 | tee -a /opt/spark/logs/spark-master.log
+    restart: unless-stopped
+
+  spark-worker:
+    container_name: lab4-spark-worker
+    image: apache/spark:3.5.0
+    user: "0:0"
+    depends_on:
+      spark-master:
+        condition: service_started
+    environment:
+      SPARK_WORKER_CORES: 1
+      SPARK_WORKER_MEMORY: 1g
+    ports:
+      - "8085:8081"
+    volumes:
+      - ./spark-conf/metrics.properties:/opt/spark/conf/metrics.properties:ro
+      - ./spark-logs:/opt/spark/logs
+    command:
+      - /bin/bash
+      - -c
+      - |
+        set -o pipefail
+        /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077 2>&1 | tee -a /opt/spark/logs/spark-worker.log
+    restart: unless-stopped
+
+  airflow-webserver:
+    <<: *airflow-common
+    command: webserver
+    ports:
+      - "8084:8080"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-scheduler:
+    <<: *airflow-common
+    command: scheduler
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8974/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-init:
+    <<: *airflow-common
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        mkdir -p /sources/dags /sources/logs /sources/output /sources/spark /sources/spark-logs
+        chown -R "${AIRFLOW_UID:-50000}:0" /sources/dags /sources/logs /sources/output /sources/spark /sources/spark-logs
+        exec /entrypoint bash -c '
+          airflow connections delete spark_local >/dev/null 2>&1 || true
+          airflow connections add spark_local --conn-type spark --conn-host "spark://spark-master" --conn-port 7077
+          airflow version
+        '
+    environment:
+      <<: *airflow-common-env
+      _AIRFLOW_DB_MIGRATE: "true"
+      _AIRFLOW_WWW_USER_CREATE: "true"
+    user: "0:0"
+    volumes:
+      - .:/sources
+
+  loki:
+    image: grafana/loki:3.2.0
+    container_name: lab4-loki
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+    restart: unless-stopped
+
+  alloy:
+    image: grafana/alloy:v1.5.1
+    container_name: lab4-alloy
+    depends_on:
+      loki:
+        condition: service_started
+    ports:
+      - "12345:12345"
+    volumes:
+      - ./logs:/opt/logs/airflow:ro
+      - ./spark-logs:/opt/logs/spark:ro
+      - ./alloy.conf:/etc/alloy/config.alloy:ro
+    command:
+      - run
+      - --server.http.listen-addr=0.0.0.0:12345
+      - /etc/alloy/config.alloy
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:v2.48.1
+    container_name: lab4-prometheus
+    depends_on:
+      spark-master:
+        condition: service_started
+      spark-worker:
+        condition: service_started
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:11.2.0
+    container_name: lab4-grafana
+    depends_on:
+      loki:
+        condition: service_started
+      prometheus:
+        condition: service_started
+    ports:
+      - "3000:3000"
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Admin
+      GF_PATHS_PROVISIONING: /etc/grafana/provisioning
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
+    restart: unless-stopped
+
+volumes:
+  postgres-db-volume:
