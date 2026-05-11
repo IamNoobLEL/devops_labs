@@ -1,0 +1,70 @@
+[2026-05-11T05:49:25.263+0000] {processor.py:157} INFO - Started process (PID=171) to work on /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:49:25.264+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/homework_panic_meter.py for tasks to queue
+[2026-05-11T05:49:25.265+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:49:25.265+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:49:25.278+0000] {processor.py:839} INFO - DAG(s) dict_keys(['homework_panic_meter']) retrieved from /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:49:25.296+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:49:25.296+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2026-05-11T05:49:25.305+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:49:25.305+0000] {dag.py:3696} INFO - Setting next_dagrun for homework_panic_meter to 2026-05-10T00:00:00+00:00, run_after=2026-05-11T00:00:00+00:00
+[2026-05-11T05:49:25.312+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/homework_panic_meter.py took 0.051 seconds
+[2026-05-11T05:49:55.511+0000] {processor.py:157} INFO - Started process (PID=183) to work on /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:49:55.512+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/homework_panic_meter.py for tasks to queue
+[2026-05-11T05:49:55.513+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:49:55.512+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:49:55.526+0000] {processor.py:839} INFO - DAG(s) dict_keys(['homework_panic_meter']) retrieved from /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:49:55.547+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:49:55.547+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2026-05-11T05:49:55.556+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:49:55.556+0000] {dag.py:3696} INFO - Setting next_dagrun for homework_panic_meter to 2026-05-10T00:00:00+00:00, run_after=2026-05-11T00:00:00+00:00
+[2026-05-11T05:49:55.564+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/homework_panic_meter.py took 0.056 seconds
+[2026-05-11T05:50:25.818+0000] {processor.py:157} INFO - Started process (PID=195) to work on /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:50:25.819+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/homework_panic_meter.py for tasks to queue
+[2026-05-11T05:50:25.820+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:50:25.820+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:50:25.840+0000] {processor.py:839} INFO - DAG(s) dict_keys(['homework_panic_meter']) retrieved from /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:50:25.862+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:50:25.862+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2026-05-11T05:50:25.873+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:50:25.873+0000] {dag.py:3696} INFO - Setting next_dagrun for homework_panic_meter to 2026-05-10T00:00:00+00:00, run_after=2026-05-11T00:00:00+00:00
+[2026-05-11T05:50:25.881+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/homework_panic_meter.py took 0.068 seconds
+[2026-05-11T05:50:56.108+0000] {processor.py:157} INFO - Started process (PID=207) to work on /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:50:56.108+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/homework_panic_meter.py for tasks to queue
+[2026-05-11T05:50:56.109+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:50:56.109+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:50:56.120+0000] {processor.py:839} INFO - DAG(s) dict_keys(['homework_panic_meter']) retrieved from /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:50:56.146+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:50:56.145+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2026-05-11T05:50:56.158+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:50:56.158+0000] {dag.py:3696} INFO - Setting next_dagrun for homework_panic_meter to 2026-05-10T00:00:00+00:00, run_after=2026-05-11T00:00:00+00:00
+[2026-05-11T05:50:56.167+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/homework_panic_meter.py took 0.062 seconds
+[2026-05-11T05:51:26.374+0000] {processor.py:157} INFO - Started process (PID=219) to work on /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:51:26.375+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/homework_panic_meter.py for tasks to queue
+[2026-05-11T05:51:26.375+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:51:26.375+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:51:26.393+0000] {processor.py:839} INFO - DAG(s) dict_keys(['homework_panic_meter']) retrieved from /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:51:26.415+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:51:26.415+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2026-05-11T05:51:26.428+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:51:26.427+0000] {dag.py:3696} INFO - Setting next_dagrun for homework_panic_meter to 2026-05-10T00:00:00+00:00, run_after=2026-05-11T00:00:00+00:00
+[2026-05-11T05:51:26.436+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/homework_panic_meter.py took 0.066 seconds
+[2026-05-11T05:51:56.663+0000] {processor.py:157} INFO - Started process (PID=238) to work on /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:51:56.664+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/homework_panic_meter.py for tasks to queue
+[2026-05-11T05:51:56.666+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:51:56.666+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:51:56.679+0000] {processor.py:839} INFO - DAG(s) dict_keys(['homework_panic_meter']) retrieved from /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:51:56.700+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:51:56.700+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2026-05-11T05:51:56.710+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:51:56.710+0000] {dag.py:3696} INFO - Setting next_dagrun for homework_panic_meter to 2026-05-10T00:00:00+00:00, run_after=2026-05-11T00:00:00+00:00
+[2026-05-11T05:51:56.717+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/homework_panic_meter.py took 0.057 seconds
+[2026-05-11T05:52:26.960+0000] {processor.py:157} INFO - Started process (PID=250) to work on /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:52:26.960+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/homework_panic_meter.py for tasks to queue
+[2026-05-11T05:52:26.961+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:52:26.961+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:52:26.973+0000] {processor.py:839} INFO - DAG(s) dict_keys(['homework_panic_meter']) retrieved from /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:52:26.993+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:52:26.992+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2026-05-11T05:52:27.003+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:52:27.003+0000] {dag.py:3696} INFO - Setting next_dagrun for homework_panic_meter to 2026-05-10T00:00:00+00:00, run_after=2026-05-11T00:00:00+00:00
+[2026-05-11T05:52:27.009+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/homework_panic_meter.py took 0.053 seconds
+[2026-05-11T05:52:57.221+0000] {processor.py:157} INFO - Started process (PID=357) to work on /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:52:57.222+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/homework_panic_meter.py for tasks to queue
+[2026-05-11T05:52:57.223+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:52:57.222+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:52:57.232+0000] {processor.py:839} INFO - DAG(s) dict_keys(['homework_panic_meter']) retrieved from /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:52:57.253+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:52:57.252+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2026-05-11T05:52:57.269+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:52:57.269+0000] {dag.py:3696} INFO - Setting next_dagrun for homework_panic_meter to 2026-05-11T00:00:00+00:00, run_after=2026-05-12T00:00:00+00:00
+[2026-05-11T05:52:57.280+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/homework_panic_meter.py took 0.060 seconds
+[2026-05-11T05:53:27.498+0000] {processor.py:157} INFO - Started process (PID=673) to work on /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:53:27.499+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/homework_panic_meter.py for tasks to queue
+[2026-05-11T05:53:27.500+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:53:27.499+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:53:27.517+0000] {processor.py:839} INFO - DAG(s) dict_keys(['homework_panic_meter']) retrieved from /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:53:27.540+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:53:27.540+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2026-05-11T05:53:27.552+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:53:27.552+0000] {dag.py:3696} INFO - Setting next_dagrun for homework_panic_meter to 2026-05-11T00:00:00+00:00, run_after=2026-05-12T00:00:00+00:00
+[2026-05-11T05:53:27.563+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/homework_panic_meter.py took 0.070 seconds
+[2026-05-11T05:53:57.799+0000] {processor.py:157} INFO - Started process (PID=685) to work on /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:53:57.800+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/homework_panic_meter.py for tasks to queue
+[2026-05-11T05:53:57.801+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:53:57.800+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:53:57.814+0000] {processor.py:839} INFO - DAG(s) dict_keys(['homework_panic_meter']) retrieved from /opt/airflow/dags/homework_panic_meter.py
+[2026-05-11T05:53:57.835+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:53:57.835+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2026-05-11T05:53:57.845+0000] {logging_mixin.py:151} INFO - [2026-05-11T05:53:57.845+0000] {dag.py:3696} INFO - Setting next_dagrun for homework_panic_meter to 2026-05-11T00:00:00+00:00, run_after=2026-05-12T00:00:00+00:00
+[2026-05-11T05:53:57.853+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/homework_panic_meter.py took 0.058 seconds
