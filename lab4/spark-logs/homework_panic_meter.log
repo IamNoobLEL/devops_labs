@@ -1,0 +1,6 @@
+2026-05-11 08:02:38,130 INFO [homework_panic_meter] Запускаю Spark-отчет за дату=2026-05-11
+2026-05-11 08:02:38,130 INFO [homework_panic_meter] Запускаю Spark-отчет за дату=2026-05-10
+2026-05-11 08:02:42,987 INFO [homework_panic_meter] Отчет записан: путь=/opt/airflow/output/homework_panic_2026-05-11.md всего_часов=7 статус=полная паника
+2026-05-11 08:02:42,988 INFO [homework_panic_meter] Останавливаю Spark-сессию
+2026-05-11 08:02:46,144 INFO [homework_panic_meter] Отчет записан: путь=/opt/airflow/output/homework_panic_2026-05-10.md всего_часов=7 статус=полная паника
+2026-05-11 08:02:46,144 INFO [homework_panic_meter] Останавливаю Spark-сессию

@@ -1,0 +1,260 @@
+[2026-05-11T08:02:36.509+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: homework_panic_meter.run_homework_panic_meter scheduled__2026-05-10T00:00:00+00:00 [queued]>
+[2026-05-11T08:02:36.513+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: homework_panic_meter.run_homework_panic_meter scheduled__2026-05-10T00:00:00+00:00 [queued]>
+[2026-05-11T08:02:36.513+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2026-05-11T08:02:36.517+0000] {taskinstance.py:1380} INFO - Executing <Task(SparkSubmitOperator): run_homework_panic_meter> on 2026-05-10 00:00:00+00:00
+[2026-05-11T08:02:36.520+0000] {standard_task_runner.py:57} INFO - Started process 341 to run task
+[2026-05-11T08:02:36.521+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'homework_panic_meter', 'run_homework_panic_meter', 'scheduled__2026-05-10T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/homework_panic_meter.py', '--cfg-path', '/tmp/tmphmsq_824']
+[2026-05-11T08:02:36.523+0000] {standard_task_runner.py:85} INFO - Job 3: Subtask run_homework_panic_meter
+[2026-05-11T08:02:36.542+0000] {task_command.py:415} INFO - Running <TaskInstance: homework_panic_meter.run_homework_panic_meter scheduled__2026-05-10T00:00:00+00:00 [running]> on host 3c3bd5d3c64a
+[2026-05-11T08:02:36.574+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='homework_panic_meter' AIRFLOW_CTX_TASK_ID='run_homework_panic_meter' AIRFLOW_CTX_EXECUTION_DATE='2026-05-10T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-10T00:00:00+00:00'
+[2026-05-11T08:02:36.577+0000] {base.py:73} INFO - Using connection ID 'spark_local' for task execution.
+[2026-05-11T08:02:36.578+0000] {spark_submit.py:341} INFO - Spark-Submit cmd: spark-submit --master spark://spark-master:7077 --conf spark.ui.prometheus.enabled=true --conf spark.executor.processTreeMetrics.enabled=true --conf spark.metrics.namespace=homework_panic_meter --name homework_panic_meter --verbose /opt/***/spark/homework_panic_meter.py --report-date 2026-05-10 --output-dir /opt/***/output --log-dir /opt/***/spark-logs
+[2026-05-11T08:02:37.382+0000] {spark_submit.py:492} INFO - Using properties file: null
+[2026-05-11T08:02:37.445+0000] {spark_submit.py:492} INFO - Parsed arguments:
+[2026-05-11T08:02:37.445+0000] {spark_submit.py:492} INFO - master                  spark://spark-master:7077
+[2026-05-11T08:02:37.445+0000] {spark_submit.py:492} INFO - remote                  null
+[2026-05-11T08:02:37.445+0000] {spark_submit.py:492} INFO - deployMode              null
+[2026-05-11T08:02:37.445+0000] {spark_submit.py:492} INFO - executorMemory          null
+[2026-05-11T08:02:37.446+0000] {spark_submit.py:492} INFO - executorCores           null
+[2026-05-11T08:02:37.446+0000] {spark_submit.py:492} INFO - totalExecutorCores      null
+[2026-05-11T08:02:37.446+0000] {spark_submit.py:492} INFO - propertiesFile          null
+[2026-05-11T08:02:37.446+0000] {spark_submit.py:492} INFO - driverMemory            null
+[2026-05-11T08:02:37.446+0000] {spark_submit.py:492} INFO - driverCores             null
+[2026-05-11T08:02:37.446+0000] {spark_submit.py:492} INFO - driverExtraClassPath    null
+[2026-05-11T08:02:37.446+0000] {spark_submit.py:492} INFO - driverExtraLibraryPath  null
+[2026-05-11T08:02:37.447+0000] {spark_submit.py:492} INFO - driverExtraJavaOptions  null
+[2026-05-11T08:02:37.447+0000] {spark_submit.py:492} INFO - supervise               false
+[2026-05-11T08:02:37.447+0000] {spark_submit.py:492} INFO - queue                   null
+[2026-05-11T08:02:37.447+0000] {spark_submit.py:492} INFO - numExecutors            null
+[2026-05-11T08:02:37.447+0000] {spark_submit.py:492} INFO - files                   null
+[2026-05-11T08:02:37.447+0000] {spark_submit.py:492} INFO - pyFiles                 null
+[2026-05-11T08:02:37.447+0000] {spark_submit.py:492} INFO - archives                null
+[2026-05-11T08:02:37.448+0000] {spark_submit.py:492} INFO - mainClass               null
+[2026-05-11T08:02:37.448+0000] {spark_submit.py:492} INFO - primaryResource         file:/opt/***/spark/homework_panic_meter.py
+[2026-05-11T08:02:37.448+0000] {spark_submit.py:492} INFO - name                    homework_panic_meter
+[2026-05-11T08:02:37.448+0000] {spark_submit.py:492} INFO - childArgs               [--report-date 2026-05-10 --output-dir /opt/***/output --log-dir /opt/***/spark-logs]
+[2026-05-11T08:02:37.448+0000] {spark_submit.py:492} INFO - jars                    null
+[2026-05-11T08:02:37.448+0000] {spark_submit.py:492} INFO - packages                null
+[2026-05-11T08:02:37.448+0000] {spark_submit.py:492} INFO - packagesExclusions      null
+[2026-05-11T08:02:37.448+0000] {spark_submit.py:492} INFO - repositories            null
+[2026-05-11T08:02:37.449+0000] {spark_submit.py:492} INFO - verbose                 true
+[2026-05-11T08:02:37.449+0000] {spark_submit.py:492} INFO - 
+[2026-05-11T08:02:37.449+0000] {spark_submit.py:492} INFO - Spark properties used, including those specified through
+[2026-05-11T08:02:37.449+0000] {spark_submit.py:492} INFO - --conf and those from the properties file null:
+[2026-05-11T08:02:37.449+0000] {spark_submit.py:492} INFO - (spark.executor.processTreeMetrics.enabled,true)
+[2026-05-11T08:02:37.449+0000] {spark_submit.py:492} INFO - (spark.metrics.namespace,homework_panic_meter)
+[2026-05-11T08:02:37.449+0000] {spark_submit.py:492} INFO - (spark.ui.prometheus.enabled,true)
+[2026-05-11T08:02:37.449+0000] {spark_submit.py:492} INFO - 
+[2026-05-11T08:02:37.449+0000] {spark_submit.py:492} INFO - 
+[2026-05-11T08:02:37.574+0000] {spark_submit.py:492} INFO - Main class:
+[2026-05-11T08:02:37.575+0000] {spark_submit.py:492} INFO - org.apache.spark.deploy.PythonRunner
+[2026-05-11T08:02:37.575+0000] {spark_submit.py:492} INFO - Arguments:
+[2026-05-11T08:02:37.575+0000] {spark_submit.py:492} INFO - file:/opt/***/spark/homework_panic_meter.py
+[2026-05-11T08:02:37.576+0000] {spark_submit.py:492} INFO - null
+[2026-05-11T08:02:37.576+0000] {spark_submit.py:492} INFO - --report-date
+[2026-05-11T08:02:37.577+0000] {spark_submit.py:492} INFO - 2026-05-10
+[2026-05-11T08:02:37.577+0000] {spark_submit.py:492} INFO - --output-dir
+[2026-05-11T08:02:37.577+0000] {spark_submit.py:492} INFO - /opt/***/output
+[2026-05-11T08:02:37.578+0000] {spark_submit.py:492} INFO - --log-dir
+[2026-05-11T08:02:37.578+0000] {spark_submit.py:492} INFO - /opt/***/spark-logs
+[2026-05-11T08:02:37.578+0000] {spark_submit.py:492} INFO - Spark config:
+[2026-05-11T08:02:37.579+0000] {spark_submit.py:492} INFO - (spark.app.name,homework_panic_meter)
+[2026-05-11T08:02:37.579+0000] {spark_submit.py:492} INFO - (spark.app.submitTime,1778486557563)
+[2026-05-11T08:02:37.579+0000] {spark_submit.py:492} INFO - (spark.executor.processTreeMetrics.enabled,true)
+[2026-05-11T08:02:37.580+0000] {spark_submit.py:492} INFO - (spark.master,spark://spark-master:7077)
+[2026-05-11T08:02:37.580+0000] {spark_submit.py:492} INFO - (spark.metrics.namespace,homework_panic_meter)
+[2026-05-11T08:02:37.581+0000] {spark_submit.py:492} INFO - (spark.submit.deployMode,client)
+[2026-05-11T08:02:37.581+0000] {spark_submit.py:492} INFO - (spark.submit.pyFiles,)
+[2026-05-11T08:02:37.582+0000] {spark_submit.py:492} INFO - (spark.ui.prometheus.enabled,true)
+[2026-05-11T08:02:37.582+0000] {spark_submit.py:492} INFO - Classpath elements:
+[2026-05-11T08:02:37.582+0000] {spark_submit.py:492} INFO - 
+[2026-05-11T08:02:37.583+0000] {spark_submit.py:492} INFO - 
+[2026-05-11T08:02:37.583+0000] {spark_submit.py:492} INFO - 
+[2026-05-11T08:02:38.130+0000] {spark_submit.py:492} INFO - 2026-05-11 08:02:38,130 INFO [homework_panic_meter] Запускаю Spark-отчет за дату=2026-05-10
+[2026-05-11T08:02:38.174+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO SparkContext: Running Spark version 3.5.0
+[2026-05-11T08:02:38.176+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO SparkContext: OS info Linux, 6.12.76-linuxkit, aarch64
+[2026-05-11T08:02:38.176+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO SparkContext: Java version 11.0.31
+[2026-05-11T08:02:38.210+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2026-05-11T08:02:38.303+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO ResourceUtils: ==============================================================
+[2026-05-11T08:02:38.303+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2026-05-11T08:02:38.304+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO ResourceUtils: ==============================================================
+[2026-05-11T08:02:38.305+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO SparkContext: Submitted application: homework_panic_meter
+[2026-05-11T08:02:38.329+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2026-05-11T08:02:38.341+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO ResourceProfile: Limiting resource is cpu
+[2026-05-11T08:02:38.342+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2026-05-11T08:02:38.391+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO SecurityManager: Changing view acls to: ***
+[2026-05-11T08:02:38.391+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO SecurityManager: Changing modify acls to: ***
+[2026-05-11T08:02:38.392+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO SecurityManager: Changing view acls groups to:
+[2026-05-11T08:02:38.392+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO SecurityManager: Changing modify acls groups to:
+[2026-05-11T08:02:38.392+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2026-05-11T08:02:38.573+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO Utils: Successfully started service 'sparkDriver' on port 38327.
+[2026-05-11T08:02:38.594+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO SparkEnv: Registering MapOutputTracker
+[2026-05-11T08:02:38.621+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO SparkEnv: Registering BlockManagerMaster
+[2026-05-11T08:02:38.630+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2026-05-11T08:02:38.630+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2026-05-11T08:02:38.633+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2026-05-11T08:02:38.644+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-e289f3e8-0edd-4999-bebe-9bf59622ecf5
+[2026-05-11T08:02:38.652+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2026-05-11T08:02:38.661+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO SparkEnv: Registering OutputCommitCoordinator
+[2026-05-11T08:02:38.739+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2026-05-11T08:02:38.770+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+[2026-05-11T08:02:38.779+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO Utils: Successfully started service 'SparkUI' on port 4041.
+[2026-05-11T08:02:38.848+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2026-05-11T08:02:38.873+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.3:7077 after 14 ms (0 ms spent in bootstraps)
+[2026-05-11T08:02:38.951+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20260511080238-0001
+[2026-05-11T08:02:38.958+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45281.
+[2026-05-11T08:02:38.959+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO NettyBlockTransferService: Server created on 3c3bd5d3c64a:45281
+[2026-05-11T08:02:38.960+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2026-05-11T08:02:38.964+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 3c3bd5d3c64a, 45281, None)
+[2026-05-11T08:02:38.965+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO BlockManagerMasterEndpoint: Registering block manager 3c3bd5d3c64a:45281 with 434.4 MiB RAM, BlockManagerId(driver, 3c3bd5d3c64a, 45281, None)
+[2026-05-11T08:02:38.967+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 3c3bd5d3c64a, 45281, None)
+[2026-05-11T08:02:38.967+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:38 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 3c3bd5d3c64a, 45281, None)
+[2026-05-11T08:02:39.098+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:39 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2026-05-11T08:02:39.684+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:39 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2026-05-11T08:02:39.688+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:39 INFO SharedState: Warehouse path is 'file:/opt/***/spark-warehouse'.
+[2026-05-11T08:02:41.262+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:41 INFO CodeGenerator: Code generated in 165.368916 ms
+[2026-05-11T08:02:41.298+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:41 INFO DAGScheduler: Registering RDD 6 (collect at /opt/***/spark/homework_panic_meter.py:95) as input to shuffle 0
+[2026-05-11T08:02:41.303+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:41 INFO DAGScheduler: Got map stage job 0 (collect at /opt/***/spark/homework_panic_meter.py:95) with 2 output partitions
+[2026-05-11T08:02:41.304+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:41 INFO DAGScheduler: Final stage: ShuffleMapStage 0 (collect at /opt/***/spark/homework_panic_meter.py:95)
+[2026-05-11T08:02:41.304+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:41 INFO DAGScheduler: Parents of final stage: List()
+[2026-05-11T08:02:41.304+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:41 INFO DAGScheduler: Missing parents: List()
+[2026-05-11T08:02:41.306+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:41 INFO DAGScheduler: Submitting ShuffleMapStage 0 (MapPartitionsRDD[6] at collect at /opt/***/spark/homework_panic_meter.py:95), which has no missing parents
+[2026-05-11T08:02:41.379+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:41 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 17.4 KiB, free 434.4 MiB)
+[2026-05-11T08:02:41.406+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:41 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 8.8 KiB, free 434.4 MiB)
+[2026-05-11T08:02:41.408+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:41 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 3c3bd5d3c64a:45281 (size: 8.8 KiB, free: 434.4 MiB)
+[2026-05-11T08:02:41.410+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:41 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1580
+[2026-05-11T08:02:41.419+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:41 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 0 (MapPartitionsRDD[6] at collect at /opt/***/spark/homework_panic_meter.py:95) (first 15 tasks are for partitions Vector(0, 1))
+[2026-05-11T08:02:41.419+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:41 INFO TaskSchedulerImpl: Adding task set 0.0 with 2 tasks resource profile 0
+[2026-05-11T08:02:43.015+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:43 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260511080238-0001/0 on worker-20260511075420-172.18.0.4-33959 (172.18.0.4:33959) with 1 core(s)
+[2026-05-11T08:02:43.016+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:43 INFO StandaloneSchedulerBackend: Granted executor ID app-20260511080238-0001/0 on hostPort 172.18.0.4:33959 with 1 core(s), 1024.0 MiB RAM
+[2026-05-11T08:02:43.050+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:43 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20260511080238-0001/0 is now RUNNING
+[2026-05-11T08:02:44.272+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:44 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.4:55392) with ID 0,  ResourceProfileId 0
+[2026-05-11T08:02:44.304+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:44 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.4:42255 with 434.4 MiB RAM, BlockManagerId(0, 172.18.0.4, 42255, None)
+[2026-05-11T08:02:44.402+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:44 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (172.18.0.4, executor 0, partition 0, PROCESS_LOCAL, 7648 bytes)
+[2026-05-11T08:02:44.655+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:44 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.18.0.4:42255 (size: 8.8 KiB, free: 434.4 MiB)
+[2026-05-11T08:02:45.374+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1) (172.18.0.4, executor 0, partition 1, PROCESS_LOCAL, 7672 bytes)
+[2026-05-11T08:02:45.379+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 987 ms on 172.18.0.4 (executor 0) (1/2)
+[2026-05-11T08:02:45.384+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 50947
+[2026-05-11T08:02:45.429+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 55 ms on 172.18.0.4 (executor 0) (2/2)
+[2026-05-11T08:02:45.429+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+[2026-05-11T08:02:45.430+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: ShuffleMapStage 0 (collect at /opt/***/spark/homework_panic_meter.py:95) finished in 4.117 s
+[2026-05-11T08:02:45.431+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: looking for newly runnable stages
+[2026-05-11T08:02:45.431+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: running: Set()
+[2026-05-11T08:02:45.431+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: waiting: Set()
+[2026-05-11T08:02:45.431+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: failed: Set()
+[2026-05-11T08:02:45.455+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO CodeGenerator: Code generated in 9.957833 ms
+[2026-05-11T08:02:45.474+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO SparkContext: Starting job: collect at /opt/***/spark/homework_panic_meter.py:95
+[2026-05-11T08:02:45.476+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Got job 1 (collect at /opt/***/spark/homework_panic_meter.py:95) with 1 output partitions
+[2026-05-11T08:02:45.476+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Final stage: ResultStage 2 (collect at /opt/***/spark/homework_panic_meter.py:95)
+[2026-05-11T08:02:45.477+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 1)
+[2026-05-11T08:02:45.477+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Missing parents: List()
+[2026-05-11T08:02:45.478+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[9] at collect at /opt/***/spark/homework_panic_meter.py:95), which has no missing parents
+[2026-05-11T08:02:45.482+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 13.7 KiB, free 434.4 MiB)
+[2026-05-11T08:02:45.483+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 6.4 KiB, free 434.4 MiB)
+[2026-05-11T08:02:45.484+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 3c3bd5d3c64a:45281 (size: 6.4 KiB, free: 434.4 MiB)
+[2026-05-11T08:02:45.484+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1580
+[2026-05-11T08:02:45.485+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[9] at collect at /opt/***/spark/homework_panic_meter.py:95) (first 15 tasks are for partitions Vector(0))
+[2026-05-11T08:02:45.485+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO TaskSchedulerImpl: Adding task set 2.0 with 1 tasks resource profile 0
+[2026-05-11T08:02:45.488+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 2) (172.18.0.4, executor 0, partition 0, NODE_LOCAL, 7619 bytes)
+[2026-05-11T08:02:45.499+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 172.18.0.4:42255 (size: 6.4 KiB, free: 434.4 MiB)
+[2026-05-11T08:02:45.531+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to 172.18.0.4:55392
+[2026-05-11T08:02:45.587+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 2) in 100 ms on 172.18.0.4 (executor 0) (1/1)
+[2026-05-11T08:02:45.587+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool
+[2026-05-11T08:02:45.588+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: ResultStage 2 (collect at /opt/***/spark/homework_panic_meter.py:95) finished in 0.106 s
+[2026-05-11T08:02:45.588+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+[2026-05-11T08:02:45.589+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO TaskSchedulerImpl: Killing all running tasks in stage 2: Stage finished
+[2026-05-11T08:02:45.589+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Job 1 finished: collect at /opt/***/spark/homework_panic_meter.py:95, took 0.114780 s
+[2026-05-11T08:02:45.652+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO CodeGenerator: Code generated in 12.268625 ms
+[2026-05-11T08:02:45.671+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO CodeGenerator: Code generated in 10.518459 ms
+[2026-05-11T08:02:45.705+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO SparkContext: Starting job: collect at /opt/***/spark/homework_panic_meter.py:100
+[2026-05-11T08:02:45.706+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Got job 2 (collect at /opt/***/spark/homework_panic_meter.py:100) with 2 output partitions
+[2026-05-11T08:02:45.706+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Final stage: ResultStage 3 (collect at /opt/***/spark/homework_panic_meter.py:100)
+[2026-05-11T08:02:45.706+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Parents of final stage: List()
+[2026-05-11T08:02:45.707+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Missing parents: List()
+[2026-05-11T08:02:45.708+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Submitting ResultStage 3 (MapPartitionsRDD[13] at collect at /opt/***/spark/homework_panic_meter.py:100), which has no missing parents
+[2026-05-11T08:02:45.709+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 3c3bd5d3c64a:45281 in memory (size: 6.4 KiB, free: 434.4 MiB)
+[2026-05-11T08:02:45.712+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 15.7 KiB, free 434.4 MiB)
+[2026-05-11T08:02:45.713+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 8.0 KiB, free 434.4 MiB)
+[2026-05-11T08:02:45.714+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 3c3bd5d3c64a:45281 (size: 8.0 KiB, free: 434.4 MiB)
+[2026-05-11T08:02:45.714+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1580
+[2026-05-11T08:02:45.715+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 3 (MapPartitionsRDD[13] at collect at /opt/***/spark/homework_panic_meter.py:100) (first 15 tasks are for partitions Vector(0, 1))
+[2026-05-11T08:02:45.715+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO TaskSchedulerImpl: Adding task set 3.0 with 2 tasks resource profile 0
+[2026-05-11T08:02:45.716+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 172.18.0.4:42255 in memory (size: 6.4 KiB, free: 434.4 MiB)
+[2026-05-11T08:02:45.716+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 3) (172.18.0.4, executor 0, partition 0, PROCESS_LOCAL, 7659 bytes)
+[2026-05-11T08:02:45.725+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 3c3bd5d3c64a:45281 in memory (size: 8.8 KiB, free: 434.4 MiB)
+[2026-05-11T08:02:45.730+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 172.18.0.4:42255 in memory (size: 8.8 KiB, free: 434.4 MiB)
+[2026-05-11T08:02:45.732+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 172.18.0.4:42255 (size: 8.0 KiB, free: 434.4 MiB)
+[2026-05-11T08:02:45.816+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO TaskSetManager: Starting task 1.0 in stage 3.0 (TID 4) (172.18.0.4, executor 0, partition 1, PROCESS_LOCAL, 7683 bytes)
+[2026-05-11T08:02:45.817+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 3) in 101 ms on 172.18.0.4 (executor 0) (1/2)
+[2026-05-11T08:02:45.871+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO TaskSetManager: Finished task 1.0 in stage 3.0 (TID 4) in 56 ms on 172.18.0.4 (executor 0) (2/2)
+[2026-05-11T08:02:45.871+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool
+[2026-05-11T08:02:45.872+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: ResultStage 3 (collect at /opt/***/spark/homework_panic_meter.py:100) finished in 0.163 s
+[2026-05-11T08:02:45.872+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Job 2 is finished. Cancelling potential speculative or zombie tasks for this job
+[2026-05-11T08:02:45.872+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO TaskSchedulerImpl: Killing all running tasks in stage 3: Stage finished
+[2026-05-11T08:02:45.873+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Job 2 finished: collect at /opt/***/spark/homework_panic_meter.py:100, took 0.167726 s
+[2026-05-11T08:02:45.876+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Registering RDD 14 (collect at /opt/***/spark/homework_panic_meter.py:100) as input to shuffle 1
+[2026-05-11T08:02:45.877+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Got map stage job 3 (collect at /opt/***/spark/homework_panic_meter.py:100) with 2 output partitions
+[2026-05-11T08:02:45.877+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Final stage: ShuffleMapStage 4 (collect at /opt/***/spark/homework_panic_meter.py:100)
+[2026-05-11T08:02:45.877+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Parents of final stage: List()
+[2026-05-11T08:02:45.877+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Missing parents: List()
+[2026-05-11T08:02:45.877+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Submitting ShuffleMapStage 4 (MapPartitionsRDD[14] at collect at /opt/***/spark/homework_panic_meter.py:100), which has no missing parents
+[2026-05-11T08:02:45.882+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 17.6 KiB, free 434.4 MiB)
+[2026-05-11T08:02:45.883+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 9.0 KiB, free 434.4 MiB)
+[2026-05-11T08:02:45.883+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 3c3bd5d3c64a:45281 (size: 9.0 KiB, free: 434.4 MiB)
+[2026-05-11T08:02:45.883+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1580
+[2026-05-11T08:02:45.884+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 4 (MapPartitionsRDD[14] at collect at /opt/***/spark/homework_panic_meter.py:100) (first 15 tasks are for partitions Vector(0, 1))
+[2026-05-11T08:02:45.884+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO TaskSchedulerImpl: Adding task set 4.0 with 2 tasks resource profile 0
+[2026-05-11T08:02:45.885+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 5) (172.18.0.4, executor 0, partition 0, PROCESS_LOCAL, 7648 bytes)
+[2026-05-11T08:02:45.892+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 172.18.0.4:42255 (size: 9.0 KiB, free: 434.4 MiB)
+[2026-05-11T08:02:45.961+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO TaskSetManager: Starting task 1.0 in stage 4.0 (TID 6) (172.18.0.4, executor 0, partition 1, PROCESS_LOCAL, 7672 bytes)
+[2026-05-11T08:02:45.962+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:45 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 5) in 78 ms on 172.18.0.4 (executor 0) (1/2)
+[2026-05-11T08:02:46.016+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO TaskSetManager: Finished task 1.0 in stage 4.0 (TID 6) in 55 ms on 172.18.0.4 (executor 0) (2/2)
+[2026-05-11T08:02:46.016+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool
+[2026-05-11T08:02:46.017+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO DAGScheduler: ShuffleMapStage 4 (collect at /opt/***/spark/homework_panic_meter.py:100) finished in 0.138 s
+[2026-05-11T08:02:46.017+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO DAGScheduler: looking for newly runnable stages
+[2026-05-11T08:02:46.017+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO DAGScheduler: running: Set()
+[2026-05-11T08:02:46.017+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO DAGScheduler: waiting: Set()
+[2026-05-11T08:02:46.018+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO DAGScheduler: failed: Set()
+[2026-05-11T08:02:46.024+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO ShufflePartitionsUtil: For shuffle(1), advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+[2026-05-11T08:02:46.039+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO CodeGenerator: Code generated in 7.595583 ms
+[2026-05-11T08:02:46.054+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO SparkContext: Starting job: collect at /opt/***/spark/homework_panic_meter.py:100
+[2026-05-11T08:02:46.055+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO DAGScheduler: Got job 4 (collect at /opt/***/spark/homework_panic_meter.py:100) with 1 output partitions
+[2026-05-11T08:02:46.055+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO DAGScheduler: Final stage: ResultStage 6 (collect at /opt/***/spark/homework_panic_meter.py:100)
+[2026-05-11T08:02:46.055+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 5)
+[2026-05-11T08:02:46.056+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO DAGScheduler: Missing parents: List()
+[2026-05-11T08:02:46.056+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO DAGScheduler: Submitting ResultStage 6 (MapPartitionsRDD[17] at collect at /opt/***/spark/homework_panic_meter.py:100), which has no missing parents
+[2026-05-11T08:02:46.058+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 28.8 KiB, free 434.3 MiB)
+[2026-05-11T08:02:46.058+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 14.3 KiB, free 434.3 MiB)
+[2026-05-11T08:02:46.059+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 3c3bd5d3c64a:45281 (size: 14.3 KiB, free: 434.4 MiB)
+[2026-05-11T08:02:46.059+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1580
+[2026-05-11T08:02:46.060+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 6 (MapPartitionsRDD[17] at collect at /opt/***/spark/homework_panic_meter.py:100) (first 15 tasks are for partitions Vector(0))
+[2026-05-11T08:02:46.060+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO TaskSchedulerImpl: Adding task set 6.0 with 1 tasks resource profile 0
+[2026-05-11T08:02:46.061+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 7) (172.18.0.4, executor 0, partition 0, NODE_LOCAL, 7619 bytes)
+[2026-05-11T08:02:46.069+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 172.18.0.4:42255 (size: 14.3 KiB, free: 434.4 MiB)
+[2026-05-11T08:02:46.088+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 1 to 172.18.0.4:55392
+[2026-05-11T08:02:46.135+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 7) in 74 ms on 172.18.0.4 (executor 0) (1/1)
+[2026-05-11T08:02:46.135+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool
+[2026-05-11T08:02:46.136+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO DAGScheduler: ResultStage 6 (collect at /opt/***/spark/homework_panic_meter.py:100) finished in 0.079 s
+[2026-05-11T08:02:46.137+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO DAGScheduler: Job 4 is finished. Cancelling potential speculative or zombie tasks for this job
+[2026-05-11T08:02:46.137+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO TaskSchedulerImpl: Killing all running tasks in stage 6: Stage finished
+[2026-05-11T08:02:46.138+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO DAGScheduler: Job 4 finished: collect at /opt/***/spark/homework_panic_meter.py:100, took 0.083351 s
+[2026-05-11T08:02:46.144+0000] {spark_submit.py:492} INFO - 2026-05-11 08:02:46,144 INFO [homework_panic_meter] Отчет записан: путь=/opt/***/output/homework_panic_2026-05-10.md всего_часов=7 статус=полная паника
+[2026-05-11T08:02:46.145+0000] {spark_submit.py:492} INFO - 2026-05-11 08:02:46,144 INFO [homework_panic_meter] Останавливаю Spark-сессию
+[2026-05-11T08:02:46.145+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2026-05-11T08:02:46.151+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO SparkUI: Stopped Spark web UI at http://3c3bd5d3c64a:4041
+[2026-05-11T08:02:46.155+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2026-05-11T08:02:46.156+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+[2026-05-11T08:02:46.171+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2026-05-11T08:02:46.184+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO MemoryStore: MemoryStore cleared
+[2026-05-11T08:02:46.185+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO BlockManager: BlockManager stopped
+[2026-05-11T08:02:46.186+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 WARN Dispatcher: Message RemoteProcessDisconnected(172.18.0.4:55392) dropped. Could not find BlockManagerEndpoint1.
+[2026-05-11T08:02:46.189+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2026-05-11T08:02:46.190+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2026-05-11T08:02:46.196+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:46 INFO SparkContext: Successfully stopped SparkContext
+[2026-05-11T08:02:47.203+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:47 INFO ShutdownHookManager: Shutdown hook called
+[2026-05-11T08:02:47.204+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:47 INFO ShutdownHookManager: Deleting directory /tmp/spark-deea55e4-bfcb-4e67-8bbb-fda3ba170ad6
+[2026-05-11T08:02:47.207+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:47 INFO ShutdownHookManager: Deleting directory /tmp/spark-0e3e1c22-b878-4fdc-ba4b-cf176cf9ea45
+[2026-05-11T08:02:47.209+0000] {spark_submit.py:492} INFO - 26/05/11 08:02:47 INFO ShutdownHookManager: Deleting directory /tmp/spark-deea55e4-bfcb-4e67-8bbb-fda3ba170ad6/pyspark-edc7850b-2f28-411e-8720-58f19d753825
+[2026-05-11T08:02:47.241+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=homework_panic_meter, task_id=run_homework_panic_meter, execution_date=20260510T000000, start_date=20260511T080236, end_date=20260511T080247
+[2026-05-11T08:02:47.257+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2026-05-11T08:02:47.266+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check
