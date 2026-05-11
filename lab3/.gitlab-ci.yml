@@ -1,0 +1,63 @@
+stages:
+  - test
+  - build
+  - deploy
+
+variables:
+  APP_DIR: "lab3"
+  IMAGE_NAME: "devops-lab3-airflow:2.7.1"
+  COMPOSE_PROJECT_NAME: "devops_lab3"
+  DOCKER_HOST: "unix:///var/run/docker.sock"
+
+.default-job:
+  tags:
+    - devops-lab3
+
+test-job:
+  extends: .default-job
+  stage: test
+  image: alpine:3.20
+  script:
+    - test -d "$APP_DIR/dags"
+    - test -d "$APP_DIR/spark"
+    - test -f "$APP_DIR/Dockerfile"
+    - test -f "$APP_DIR/docker-compose.yml"
+  rules:
+    - when: always
+
+build-job:
+  extends: .default-job
+  stage: build
+  image: docker:latest
+  script:
+    - cd "$APP_DIR"
+    - docker build -t "$IMAGE_NAME" .
+  rules:
+    - if: '$CI_COMMIT_BRANCH =~ /^feature\//'
+      when: manual
+      allow_failure: true
+    - when: on_success
+
+deploy-job:
+  extends: .default-job
+  stage: deploy
+  image: tmaier/docker-compose:latest
+  script:
+    - cd "$APP_DIR"
+    - docker-compose down --remove-orphans || true
+    - docker-compose up -d --no-build
+  rules:
+    - if: '$CI_COMMIT_BRANCH =~ /^(main|master|develop)$/'
+      when: on_success
+    - when: never
+
+clear-job:
+  extends: .default-job
+  stage: deploy
+  image: tmaier/docker-compose:latest
+  script:
+    - cd "$APP_DIR"
+    - docker-compose down -v --remove-orphans
+  rules:
+    - when: manual
+  allow_failure: true
