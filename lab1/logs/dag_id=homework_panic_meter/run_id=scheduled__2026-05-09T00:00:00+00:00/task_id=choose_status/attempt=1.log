@@ -1,0 +1,13 @@
+[2026-05-10T19:34:05.457+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: homework_panic_meter.choose_status scheduled__2026-05-09T00:00:00+00:00 [queued]>
+[2026-05-10T19:34:05.462+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: homework_panic_meter.choose_status scheduled__2026-05-09T00:00:00+00:00 [queued]>
+[2026-05-10T19:34:05.462+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2026-05-10T19:34:05.469+0000] {taskinstance.py:1380} INFO - Executing <Task(_PythonDecoratedOperator): choose_status> on 2026-05-09 00:00:00+00:00
+[2026-05-10T19:34:05.471+0000] {standard_task_runner.py:57} INFO - Started process 205 to run task
+[2026-05-10T19:34:05.472+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'homework_panic_meter', 'choose_status', 'scheduled__2026-05-09T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/homework_panic_meter.py', '--cfg-path', '/tmp/tmp7ltcd_cb']
+[2026-05-10T19:34:05.473+0000] {standard_task_runner.py:85} INFO - Job 6: Subtask choose_status
+[2026-05-10T19:34:05.492+0000] {task_command.py:415} INFO - Running <TaskInstance: homework_panic_meter.choose_status scheduled__2026-05-09T00:00:00+00:00 [running]> on host b4cd069f72e7
+[2026-05-10T19:34:05.521+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='homework_panic_meter' AIRFLOW_CTX_TASK_ID='choose_status' AIRFLOW_CTX_EXECUTION_DATE='2026-05-09T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-09T00:00:00+00:00'
+[2026-05-10T19:34:05.523+0000] {python.py:194} INFO - Done. Returned value was: полная паника
+[2026-05-10T19:34:05.530+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=homework_panic_meter, task_id=choose_status, execution_date=20260509T000000, start_date=20260510T193405, end_date=20260510T193405
+[2026-05-10T19:34:05.572+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2026-05-10T19:34:05.586+0000] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check

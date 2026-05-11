@@ -1,0 +1,30 @@
+[2026-05-10T19:33:07.633+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2026-05-10T19:33:07.634+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2026-05-10T19:33:07.634+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2026-05-10T19:33:07.634+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2026-05-10T19:33:07.635+0000] {manager.py:762} INFO - There are 1 files in /opt/airflow/dags
+[2026-05-10T19:33:07.688+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/homework_panic_meter.py    171  0.02s             0           0
+================================================================================
+[2026-05-10T19:33:37.914+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/homework_panic_meter.py    190  0.00s             1           0  0.06s           2026-05-10T19:33:07
+================================================================================
+[2026-05-10T19:34:08.139+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/homework_panic_meter.py    222  0.00s             1           0  0.17s           2026-05-10T19:33:38
+================================================================================
+[2026-05-10T19:34:31.305+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
